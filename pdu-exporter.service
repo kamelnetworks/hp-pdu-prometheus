@@ -1,0 +1,12 @@
+[Unit]
+Description=HP PDU Exporter - by snmp_exporter
+
+[Service]
+Restart=always
+User=pdu-exporter
+ExecStart=/usr/local/bin/snmp_exporter \
+  --config.file /etc/snmp_exporter/hp-pdu-prometheus/snmp.yml \
+  --web.listen-address=":9666"
+
+[Install]
+WantedBy=default.target
