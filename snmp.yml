@@ -1161,3 +1161,4 @@ hpe-pdumm:
       3: overloadCritical
       4: voltageRangeWarning
       5: voltageRangeCritical
+  max_repetitions: 4

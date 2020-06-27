@@ -1,5 +1,7 @@
 modules:
   hpe-pdumm:
+    # The AF400A seems to have trouble with anything higher than 4
+    max_repetitions: 4
     walk:
       - system
       - interfaces
