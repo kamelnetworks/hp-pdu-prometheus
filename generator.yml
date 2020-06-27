@@ -1,0 +1,588 @@
+modules:
+  hpe-pdumm:
+    walk:
+      - system
+      - interfaces
+      - ifTable
+      - snmp
+      - icmp 
+      - ip
+      - tcpActiveOpens
+      - tcpAttemptFails
+      - tcpCurrEstab
+      - tcpEstabResets
+      - tcpInErrs
+      - tcpInSegs
+      - tcpMaxConn
+      - tcpOutRsts
+      - tcpOutSegs
+      - tcpPassiveOpens
+      - tcpRetransSegs
+      - tcpRtoAlgorithm
+      - tcpRtoMax
+      - tcpRtoMin
+      - udpInDatagrams
+      - udpInErrors
+      - udpNoPorts
+      - udpOutDatagrams
+      - cpqHoGUID
+      - managementModuleIdent
+      - pdu
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: 1.3.6.1.2.1.2.2.1.2 # ifDescr
+        drop_source_indexes: true
+      - source_indexes: [pduIdentIndex]
+        lookup: pduName
+        drop_source_indexes: true
+      - source_indexes: [pduOutputIndex]
+        lookup: pduName
+        drop_source_indexes: true
+      - source_indexes: [pduInputIndex]
+        lookup: pduName
+        drop_source_indexes: true
+    overrides:
+      pduControllable:
+        type: EnumAsInfo
+      pduStatus:
+        type: EnumAsStateSet
+      ifOperStatus:
+        type: EnumAsStateSet
+      ifAdminStatus:
+        type: EnumAsStateSet
+      breakerStatus:
+        type: EnumAsStateSet
+      ifDescr:
+        ignore: true # Lookup metric
+      icmpMsgStatsInPkts:
+        ignore: true
+      icmpMsgStatsIPVersion:
+        ignore: true
+      icmpMsgStatsOutPkts:
+        ignore: true
+      icmpMsgStatsType:
+        ignore: true
+      icmpStatsInErrors:
+        ignore: true
+      icmpStatsInMsgs:
+        ignore: true
+      icmpStatsIPVersion:
+        ignore: true
+      icmpStatsOutErrors:
+        ignore: true
+      icmpStatsOutMsgs:
+        ignore: true
+      inetCidrRouteAge:
+        ignore: true
+      inetCidrRouteDest:
+        ignore: true
+      inetCidrRouteDestType:
+        ignore: true
+      inetCidrRouteDiscards:
+        ignore: true
+      inetCidrRouteIfIndex:
+        ignore: true
+      inetCidrRouteMetric1:
+        ignore: true
+      inetCidrRouteMetric2:
+        ignore: true
+      inetCidrRouteMetric3:
+        ignore: true
+      inetCidrRouteMetric4:
+        ignore: true
+      inetCidrRouteMetric5:
+        ignore: true
+      inetCidrRouteNextHop:
+        ignore: true
+      inetCidrRouteNextHopAS:
+        ignore: true
+      inetCidrRouteNextHopType:
+        ignore: true
+      inetCidrRouteNumber:
+        ignore: true
+      inetCidrRoutePfxLen:
+        ignore: true
+      inetCidrRoutePolicy:
+        ignore: true
+      inetCidrRouteProto:
+        ignore: true
+      inetCidrRouteStatus:
+        ignore: true
+      inetCidrRouteType:
+        ignore: true
+      ipAddressAddr:
+        ignore: true
+      ipAddressAddrType:
+        ignore: true
+      ipAddressCreated:
+        ignore: true
+      ipAddressIfIndex:
+        ignore: true
+      ipAddressLastChanged:
+        ignore: true
+      ipAddressOrigin:
+        ignore: true
+      ipAddressPrefix:
+        ignore: true
+      ipAddressPrefixAdvPreferredLifetime:
+        ignore: true
+      ipAddressPrefixAdvValidLifetime:
+        ignore: true
+      ipAddressPrefixAutonomousFlag:
+        ignore: true
+      ipAddressPrefixIfIndex:
+        ignore: true
+      ipAddressPrefixLength:
+        ignore: true
+      ipAddressPrefixOnLinkFlag:
+        ignore: true
+      ipAddressPrefixOrigin:
+        ignore: true
+      ipAddressPrefixPrefix:
+        ignore: true
+      ipAddressPrefixType:
+        ignore: true
+      ipAddressRowStatus:
+        ignore: true
+      ipAddressSpinLock:
+        ignore: true
+      ipAddressStatus:
+        ignore: true
+      ipAddressStorageType:
+        ignore: true
+      ipAddressType:
+        ignore: true
+      ipCidrRouteAge:
+        ignore: true
+      ipCidrRouteDest:
+        ignore: true
+      ipCidrRouteIfIndex:
+        ignore: true
+      ipCidrRouteInfo:
+        ignore: true
+      ipCidrRouteMask:
+        ignore: true
+      ipCidrRouteMetric1:
+        ignore: true
+      ipCidrRouteMetric2:
+        ignore: true
+      ipCidrRouteMetric3:
+        ignore: true
+      ipCidrRouteMetric4:
+        ignore: true
+      ipCidrRouteMetric5:
+        ignore: true
+      ipCidrRouteNextHop:
+        ignore: true
+      ipCidrRouteNextHopAS:
+        ignore: true
+      ipCidrRouteNumber:
+        ignore: true
+      ipCidrRouteProto:
+        ignore: true
+      ipCidrRouteStatus:
+        ignore: true
+      ipCidrRouteTos:
+        ignore: true
+      ipCidrRouteType:
+        ignore: true
+      ipDefaultRouterAddress:
+        ignore: true
+      ipDefaultRouterAddressType:
+        ignore: true
+      ipDefaultRouterIfIndex:
+        ignore: true
+      ipDefaultRouterLifetime:
+        ignore: true
+      ipDefaultRouterPreference:
+        ignore: true
+      ipForwardAge:
+        ignore: true
+      ipForwardDest:
+        ignore: true
+      ipForwardIfIndex:
+        ignore: true
+      ipForwardInfo:
+        ignore: true
+      ipForwardMask:
+        ignore: true
+      ipForwardMetric1:
+        ignore: true
+      ipForwardMetric2:
+        ignore: true
+      ipForwardMetric3:
+        ignore: true
+      ipForwardMetric4:
+        ignore: true
+      ipForwardMetric5:
+        ignore: true
+      ipForwardNextHop:
+        ignore: true
+      ipForwardNextHopAS:
+        ignore: true
+      ipForwardNumber:
+        ignore: true
+      ipForwardPolicy:
+        ignore: true
+      ipForwardProto:
+        ignore: true
+      ipForwardType:
+        ignore: true
+      ipIfStatsDiscontinuityTime:
+        ignore: true
+      ipIfStatsHCInBcastPkts:
+        ignore: true
+      ipIfStatsHCInDelivers:
+        ignore: true
+      ipIfStatsHCInForwDatagrams:
+        ignore: true
+      ipIfStatsHCInMcastOctets:
+        ignore: true
+      ipIfStatsHCInMcastPkts:
+        ignore: true
+      ipIfStatsHCInOctets:
+        ignore: true
+      ipIfStatsHCInReceives:
+        ignore: true
+      ipIfStatsHCOutBcastPkts:
+        ignore: true
+      ipIfStatsHCOutForwDatagrams:
+        ignore: true
+      ipIfStatsHCOutMcastOctets:
+        ignore: true
+      ipIfStatsHCOutMcastPkts:
+        ignore: true
+      ipIfStatsHCOutOctets:
+        ignore: true
+      ipIfStatsHCOutRequests:
+        ignore: true
+      ipIfStatsHCOutTransmits:
+        ignore: true
+      ipIfStatsIfIndex:
+        ignore: true
+      ipIfStatsInAddrErrors:
+        ignore: true
+      ipIfStatsInBcastPkts:
+        ignore: true
+      ipIfStatsInDelivers:
+        ignore: true
+      ipIfStatsInDiscards:
+        ignore: true
+      ipIfStatsInForwDatagrams:
+        ignore: true
+      ipIfStatsInHdrErrors:
+        ignore: true
+      ipIfStatsInMcastOctets:
+        ignore: true
+      ipIfStatsInMcastPkts:
+        ignore: true
+      ipIfStatsInNoRoutes:
+        ignore: true
+      ipIfStatsInOctets:
+        ignore: true
+      ipIfStatsInReceives:
+        ignore: true
+      ipIfStatsInTruncatedPkts:
+        ignore: true
+      ipIfStatsInUnknownProtos:
+        ignore: true
+      ipIfStatsIPVersion:
+        ignore: true
+      ipIfStatsOutBcastPkts:
+        ignore: true
+      ipIfStatsOutDiscards:
+        ignore: true
+      ipIfStatsOutForwDatagrams:
+        ignore: true
+      ipIfStatsOutFragCreates:
+        ignore: true
+      ipIfStatsOutFragFails:
+        ignore: true
+      ipIfStatsOutFragOKs:
+        ignore: true
+      ipIfStatsOutFragReqds:
+        ignore: true
+      ipIfStatsOutMcastOctets:
+        ignore: true
+      ipIfStatsOutMcastPkts:
+        ignore: true
+      ipIfStatsOutOctets:
+        ignore: true
+      ipIfStatsOutRequests:
+        ignore: true
+      ipIfStatsOutTransmits:
+        ignore: true
+      ipIfStatsReasmFails:
+        ignore: true
+      ipIfStatsReasmOKs:
+        ignore: true
+      ipIfStatsReasmReqds:
+        ignore: true
+      ipIfStatsRefreshRate:
+        ignore: true
+      ipIfStatsTableLastChange:
+        ignore: true
+      ipNetToMediaNetAddress:
+        ignore: true
+      ipNetToMediaPhysAddress:
+        ignore: true
+      ipNetToMediaType:
+        ignore: true
+      ipNetToPhysicalIfIndex:
+        ignore: true
+      ipNetToPhysicalLastUpdated:
+        ignore: true
+      ipNetToPhysicalNetAddress:
+        ignore: true
+      ipNetToPhysicalNetAddressType:
+        ignore: true
+      ipNetToPhysicalPhysAddress:
+        ignore: true
+      ipNetToPhysicalRowStatus:
+        ignore: true
+      ipNetToPhysicalState:
+        ignore: true
+      ipNetToPhysicalType:
+        ignore: true
+      ipSystemStatsDiscontinuityTime:
+        ignore: true
+      ipSystemStatsHCInBcastPkts:
+        ignore: true
+      ipSystemStatsHCInDelivers:
+        ignore: true
+      ipSystemStatsHCInForwDatagrams:
+        ignore: true
+      ipSystemStatsHCInMcastOctets:
+        ignore: true
+      ipSystemStatsHCInMcastPkts:
+        ignore: true
+      ipSystemStatsHCInOctets:
+        ignore: true
+      ipSystemStatsHCInReceives:
+        ignore: true
+      ipSystemStatsHCOutBcastPkts:
+        ignore: true
+      ipSystemStatsHCOutForwDatagrams:
+        ignore: true
+      ipSystemStatsHCOutMcastOctets:
+        ignore: true
+      ipSystemStatsHCOutMcastPkts:
+        ignore: true
+      ipSystemStatsHCOutOctets:
+        ignore: true
+      ipSystemStatsHCOutRequests:
+        ignore: true
+      ipSystemStatsHCOutTransmits:
+        ignore: true
+      ipSystemStatsInAddrErrors:
+        ignore: true
+      ipSystemStatsInBcastPkts:
+        ignore: true
+      ipSystemStatsInDelivers:
+        ignore: true
+      ipSystemStatsInDiscards:
+        ignore: true
+      ipSystemStatsInForwDatagrams:
+        ignore: true
+      ipSystemStatsInHdrErrors:
+        ignore: true
+      ipSystemStatsInMcastOctets:
+        ignore: true
+      ipSystemStatsInMcastPkts:
+        ignore: true
+      ipSystemStatsInNoRoutes:
+        ignore: true
+      ipSystemStatsInOctets:
+        ignore: true
+      ipSystemStatsInReceives:
+        ignore: true
+      ipSystemStatsInTruncatedPkts:
+        ignore: true
+      ipSystemStatsInUnknownProtos:
+        ignore: true
+      ipSystemStatsIPVersion:
+        ignore: true
+      ipSystemStatsOutBcastPkts:
+        ignore: true
+      ipSystemStatsOutDiscards:
+        ignore: true
+      ipSystemStatsOutForwDatagrams:
+        ignore: true
+      ipSystemStatsOutFragCreates:
+        ignore: true
+      ipSystemStatsOutFragFails:
+        ignore: true
+      ipSystemStatsOutFragOKs:
+        ignore: true
+      ipSystemStatsOutFragReqds:
+        ignore: true
+      ipSystemStatsOutMcastOctets:
+        ignore: true
+      ipSystemStatsOutMcastPkts:
+        ignore: true
+      ipSystemStatsOutNoRoutes:
+        ignore: true
+      ipSystemStatsOutOctets:
+        ignore: true
+      ipSystemStatsOutRequests:
+        ignore: true
+      ipSystemStatsOutTransmits:
+        ignore: true
+      ipSystemStatsReasmFails:
+        ignore: true
+      ipSystemStatsReasmOKs:
+        ignore: true
+      ipSystemStatsReasmReqds:
+        ignore: true
+      ipSystemStatsRefreshRate:
+        ignore: true
+      ipv4InterfaceEnableStatus:
+        ignore: true
+      ipv4InterfaceIfIndex:
+        ignore: true
+      ipv4InterfaceReasmMaxSize:
+        ignore: true
+      ipv4InterfaceRetransmitTime:
+        ignore: true
+      ipv4InterfaceTableLastChange:
+        ignore: true
+      ipv6InterfaceEnableStatus:
+        ignore: true
+      ipv6InterfaceForwarding:
+        ignore: true
+      ipv6InterfaceIdentifier:
+        ignore: true
+      ipv6InterfaceIfIndex:
+        ignore: true
+      ipv6InterfaceReachableTime:
+        ignore: true
+      ipv6InterfaceReasmMaxSize:
+        ignore: true
+      ipv6InterfaceRetransmitTime:
+        ignore: true
+      ipv6InterfaceTableLastChange:
+        ignore: true
+      ipv6IpDefaultHopLimit:
+        ignore: true
+      ipv6IpForwarding:
+        ignore: true
+      ipv6RouterAdvertCurHopLimit:
+        ignore: true
+      ipv6RouterAdvertDefaultLifetime:
+        ignore: true
+      ipv6RouterAdvertIfIndex:
+        ignore: true
+      ipv6RouterAdvertLinkMTU:
+        ignore: true
+      ipv6RouterAdvertManagedFlag:
+        ignore: true
+      ipv6RouterAdvertMaxInterval:
+        ignore: true
+      ipv6RouterAdvertMinInterval:
+        ignore: true
+      ipv6RouterAdvertOtherConfigFlag:
+        ignore: true
+      ipv6RouterAdvertReachableTime:
+        ignore: true
+      ipv6RouterAdvertRetransmitTime:
+        ignore: true
+      ipv6RouterAdvertRowStatus:
+        ignore: true
+      ipv6RouterAdvertSendAdverts:
+        ignore: true
+      ipv6RouterAdvertSpinLock:
+        ignore: true
+      ipv6ScopeZoneIndex3:
+        ignore: true
+      ipv6ScopeZoneIndex6:
+        ignore: true
+      ipv6ScopeZoneIndex7:
+        ignore: true
+      ipv6ScopeZoneIndex9:
+        ignore: true
+      ipv6ScopeZoneIndexA:
+        ignore: true
+      ipv6ScopeZoneIndexAdminLocal:
+        ignore: true
+      ipv6ScopeZoneIndexB:
+        ignore: true
+      ipv6ScopeZoneIndexC:
+        ignore: true
+      ipv6ScopeZoneIndexD:
+        ignore: true
+      ipv6ScopeZoneIndexIfIndex:
+        ignore: true
+      ipv6ScopeZoneIndexLinkLocal:
+        ignore: true
+      ipv6ScopeZoneIndexOrganizationLocal:
+        ignore: true
+      ipv6ScopeZoneIndexSiteLocal:
+        ignore: true
+      ipRouteMetric2:
+        ignore: true
+      ipRouteMetric3:
+        ignore: true
+      ipRouteMetric4:
+        ignore: true
+      ipRouteMetric5:
+        ignore: true
+      ipRouteNextHop:
+        ignore: true
+      ipRouteProto:
+        ignore: true
+      ipRouteType:
+        ignore: true
+      ipRouteMetric1:
+        ignore: true
+      ipRouteMask:
+        ignore: true
+      ipRouteInfo:
+        ignore: true
+      ipRouteIfIndex:
+        ignore: true
+      ipRouteDest:
+        ignore: true
+      ipRouteAge:
+        ignore: true
+      sysContact:
+        ignore: true
+      sysORUpTime:
+        ignore: true
+      sysORLastChange:
+        ignore: true
+      sysORID:
+        ignore: true
+      sysORDescr:
+        ignore: true
+      sysName:
+        ignore: true
+      sysLocation:
+        ignore: true
+      sysObjectID:
+        ignore: true
+      ipNetToMediaIfIndex:
+        ignore: true
+      ifType:
+        ignore: true
+      ifSpecific:
+        ignore: true
+      ipAdEntReasmMaxSize:
+        ignore: true
+      ipAdEntNetMask:
+        ignore: true
+      ipAdEntIfIndex:
+        ignore: true
+      ipAdEntBcastAddr:
+        ignore: true
+      ipAdEntAddr:
+        ignore: true
+      pduIdentIndex:
+        ignore: true
+      pduOutputIndex:
+        ignore: true
+      pduInputIndex:
+        ignore: true
+      ifIndex:
+        ignore: true
+      breakerIndex:
+        ignore: true

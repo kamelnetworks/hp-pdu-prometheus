@@ -1,0 +1,1163 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+hpe-pdumm:
+  walk:
+  - 1.3.6.1.2.1.1
+  - 1.3.6.1.2.1.11
+  - 1.3.6.1.2.1.2
+  - 1.3.6.1.2.1.4
+  - 1.3.6.1.2.1.5
+  - 1.3.6.1.4.1.232.165.1.2
+  - 1.3.6.1.4.1.232.165.2
+  get:
+  - 1.3.6.1.2.1.6.1.0
+  - 1.3.6.1.2.1.6.10.0
+  - 1.3.6.1.2.1.6.11.0
+  - 1.3.6.1.2.1.6.12.0
+  - 1.3.6.1.2.1.6.14.0
+  - 1.3.6.1.2.1.6.15.0
+  - 1.3.6.1.2.1.6.2.0
+  - 1.3.6.1.2.1.6.3.0
+  - 1.3.6.1.2.1.6.4.0
+  - 1.3.6.1.2.1.6.5.0
+  - 1.3.6.1.2.1.6.6.0
+  - 1.3.6.1.2.1.6.7.0
+  - 1.3.6.1.2.1.6.8.0
+  - 1.3.6.1.2.1.6.9.0
+  - 1.3.6.1.2.1.7.1.0
+  - 1.3.6.1.2.1.7.2.0
+  - 1.3.6.1.2.1.7.3.0
+  - 1.3.6.1.2.1.7.4.0
+  - 1.3.6.1.4.1.232.11.2.10.3.0
+  metrics:
+  - name: sysORIndex
+    oid: 1.3.6.1.2.1.1.9.1.1
+    type: gauge
+    help: The auxiliary variable used for identifying instances of the columnar objects
+      in the sysORTable. - 1.3.6.1.2.1.1.9.1.1
+    indexes:
+    - labelname: sysORIndex
+      type: gauge
+  - name: sysDescr
+    oid: 1.3.6.1.2.1.1.1
+    type: DisplayString
+    help: A textual description of the entity - 1.3.6.1.2.1.1.1
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: sysServices
+    oid: 1.3.6.1.2.1.1.7
+    type: gauge
+    help: A value which indicates the set of services that this entity primarily offers
+      - 1.3.6.1.2.1.1.7
+  - name: snmpSilentDrops
+    oid: 1.3.6.1.2.1.11.31
+    type: counter
+    help: The total number of Confirmed Class PDUs (such as GetRequest-PDUs, GetNextRequest-PDUs,
+      GetBulkRequest-PDUs, SetRequest-PDUs, and InformRequest-PDUs) delivered to the
+      SNMP entity which were silently dropped because the size of a reply containing
+      an alternate Response Class PDU (such as a Response-PDU) with an empty variable-bindings
+      field was greater than either a local constraint or the maximum message size
+      associated with the originator of the request. - 1.3.6.1.2.1.11.31
+  - name: snmpProxyDrops
+    oid: 1.3.6.1.2.1.11.32
+    type: counter
+    help: The total number of Confirmed Class PDUs (such as GetRequest-PDUs, GetNextRequest-PDUs,
+      GetBulkRequest-PDUs, SetRequest-PDUs, and InformRequest-PDUs) delivered to the
+      SNMP entity which were silently dropped because the transmission of the (possibly
+      translated) message to a proxy target failed in a manner (other than a time-out)
+      such that no Response Class PDU (such as a Response-PDU) could be returned.
+      - 1.3.6.1.2.1.11.32
+  - name: snmpInPkts
+    oid: 1.3.6.1.2.1.11.1
+    type: counter
+    help: The total number of Messages delivered to the SNMP entity from the transport
+      service. - 1.3.6.1.2.1.11.1
+  - name: snmpOutPkts
+    oid: 1.3.6.1.2.1.11.2
+    type: counter
+    help: The total number of SNMP Messages which were passed from the SNMP protocol
+      entity to the transport service. - 1.3.6.1.2.1.11.2
+  - name: snmpInBadVersions
+    oid: 1.3.6.1.2.1.11.3
+    type: counter
+    help: The total number of SNMP Messages which were delivered to the SNMP protocol
+      entity and were for an unsupported SNMP version. - 1.3.6.1.2.1.11.3
+  - name: snmpInBadCommunityNames
+    oid: 1.3.6.1.2.1.11.4
+    type: counter
+    help: The total number of SNMP Messages delivered to the SNMP protocol entity
+      which used a SNMP community name not known to said entity. - 1.3.6.1.2.1.11.4
+  - name: snmpInBadCommunityUses
+    oid: 1.3.6.1.2.1.11.5
+    type: counter
+    help: The total number of SNMP Messages delivered to the SNMP protocol entity
+      which represented an SNMP operation which was not allowed by the SNMP community
+      named in the Message. - 1.3.6.1.2.1.11.5
+  - name: snmpInASNParseErrs
+    oid: 1.3.6.1.2.1.11.6
+    type: counter
+    help: The total number of ASN.1 or BER errors encountered by the SNMP protocol
+      entity when decoding received SNMP Messages. - 1.3.6.1.2.1.11.6
+  - name: snmpInTooBigs
+    oid: 1.3.6.1.2.1.11.8
+    type: counter
+    help: The total number of SNMP PDUs which were delivered to the SNMP protocol
+      entity and for which the value of the error-status field is `tooBig'. - 1.3.6.1.2.1.11.8
+  - name: snmpInNoSuchNames
+    oid: 1.3.6.1.2.1.11.9
+    type: counter
+    help: The total number of SNMP PDUs which were delivered to the SNMP protocol
+      entity and for which the value of the error-status field is `noSuchName'. -
+      1.3.6.1.2.1.11.9
+  - name: snmpInBadValues
+    oid: 1.3.6.1.2.1.11.10
+    type: counter
+    help: The total number of SNMP PDUs which were delivered to the SNMP protocol
+      entity and for which the value of the error-status field is `badValue'. - 1.3.6.1.2.1.11.10
+  - name: snmpInReadOnlys
+    oid: 1.3.6.1.2.1.11.11
+    type: counter
+    help: The total number valid SNMP PDUs which were delivered to the SNMP protocol
+      entity and for which the value of the error-status field is `readOnly' - 1.3.6.1.2.1.11.11
+  - name: snmpInGenErrs
+    oid: 1.3.6.1.2.1.11.12
+    type: counter
+    help: The total number of SNMP PDUs which were delivered to the SNMP protocol
+      entity and for which the value of the error-status field is `genErr'. - 1.3.6.1.2.1.11.12
+  - name: snmpInTotalReqVars
+    oid: 1.3.6.1.2.1.11.13
+    type: counter
+    help: The total number of MIB objects which have been retrieved successfully by
+      the SNMP protocol entity as the result of receiving valid SNMP Get-Request and
+      Get-Next PDUs. - 1.3.6.1.2.1.11.13
+  - name: snmpInTotalSetVars
+    oid: 1.3.6.1.2.1.11.14
+    type: counter
+    help: The total number of MIB objects which have been altered successfully by
+      the SNMP protocol entity as the result of receiving valid SNMP Set-Request PDUs.
+      - 1.3.6.1.2.1.11.14
+  - name: snmpInGetRequests
+    oid: 1.3.6.1.2.1.11.15
+    type: counter
+    help: The total number of SNMP Get-Request PDUs which have been accepted and processed
+      by the SNMP protocol entity. - 1.3.6.1.2.1.11.15
+  - name: snmpInGetNexts
+    oid: 1.3.6.1.2.1.11.16
+    type: counter
+    help: The total number of SNMP Get-Next PDUs which have been accepted and processed
+      by the SNMP protocol entity. - 1.3.6.1.2.1.11.16
+  - name: snmpInSetRequests
+    oid: 1.3.6.1.2.1.11.17
+    type: counter
+    help: The total number of SNMP Set-Request PDUs which have been accepted and processed
+      by the SNMP protocol entity. - 1.3.6.1.2.1.11.17
+  - name: snmpInGetResponses
+    oid: 1.3.6.1.2.1.11.18
+    type: counter
+    help: The total number of SNMP Get-Response PDUs which have been accepted and
+      processed by the SNMP protocol entity. - 1.3.6.1.2.1.11.18
+  - name: snmpInTraps
+    oid: 1.3.6.1.2.1.11.19
+    type: counter
+    help: The total number of SNMP Trap PDUs which have been accepted and processed
+      by the SNMP protocol entity. - 1.3.6.1.2.1.11.19
+  - name: snmpOutTooBigs
+    oid: 1.3.6.1.2.1.11.20
+    type: counter
+    help: The total number of SNMP PDUs which were generated by the SNMP protocol
+      entity and for which the value of the error-status field is `tooBig.' - 1.3.6.1.2.1.11.20
+  - name: snmpOutNoSuchNames
+    oid: 1.3.6.1.2.1.11.21
+    type: counter
+    help: The total number of SNMP PDUs which were generated by the SNMP protocol
+      entity and for which the value of the error-status is `noSuchName'. - 1.3.6.1.2.1.11.21
+  - name: snmpOutBadValues
+    oid: 1.3.6.1.2.1.11.22
+    type: counter
+    help: The total number of SNMP PDUs which were generated by the SNMP protocol
+      entity and for which the value of the error-status field is `badValue'. - 1.3.6.1.2.1.11.22
+  - name: snmpOutGenErrs
+    oid: 1.3.6.1.2.1.11.24
+    type: counter
+    help: The total number of SNMP PDUs which were generated by the SNMP protocol
+      entity and for which the value of the error-status field is `genErr'. - 1.3.6.1.2.1.11.24
+  - name: snmpOutGetRequests
+    oid: 1.3.6.1.2.1.11.25
+    type: counter
+    help: The total number of SNMP Get-Request PDUs which have been generated by the
+      SNMP protocol entity. - 1.3.6.1.2.1.11.25
+  - name: snmpOutGetNexts
+    oid: 1.3.6.1.2.1.11.26
+    type: counter
+    help: The total number of SNMP Get-Next PDUs which have been generated by the
+      SNMP protocol entity. - 1.3.6.1.2.1.11.26
+  - name: snmpOutSetRequests
+    oid: 1.3.6.1.2.1.11.27
+    type: counter
+    help: The total number of SNMP Set-Request PDUs which have been generated by the
+      SNMP protocol entity. - 1.3.6.1.2.1.11.27
+  - name: snmpOutGetResponses
+    oid: 1.3.6.1.2.1.11.28
+    type: counter
+    help: The total number of SNMP Get-Response PDUs which have been generated by
+      the SNMP protocol entity. - 1.3.6.1.2.1.11.28
+  - name: snmpOutTraps
+    oid: 1.3.6.1.2.1.11.29
+    type: counter
+    help: The total number of SNMP Trap PDUs which have been generated by the SNMP
+      protocol entity. - 1.3.6.1.2.1.11.29
+  - name: snmpEnableAuthenTraps
+    oid: 1.3.6.1.2.1.11.30
+    type: gauge
+    help: Indicates whether the SNMP agent process is permitted to generate authentication-failure
+      traps - 1.3.6.1.2.1.11.30
+    enum_values:
+      1: enabled
+      2: disabled
+  - name: ifNumber
+    oid: 1.3.6.1.2.1.2.1
+    type: gauge
+    help: The number of network interfaces (regardless of their current state) present
+      on this system. - 1.3.6.1.2.1.2.1
+  - name: ifMtu
+    oid: 1.3.6.1.2.1.2.2.1.4
+    type: gauge
+    help: The size of the largest datagram which can be sent/received on the interface,
+      specified in octets - 1.3.6.1.2.1.2.2.1.4
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifSpeed
+    oid: 1.3.6.1.2.1.2.2.1.5
+    type: gauge
+    help: An estimate of the interface's current bandwidth in bits per second - 1.3.6.1.2.1.2.2.1.5
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifPhysAddress
+    oid: 1.3.6.1.2.1.2.2.1.6
+    type: PhysAddress48
+    help: The interface's address at the protocol layer immediately `below' the network
+      layer in the protocol stack - 1.3.6.1.2.1.2.2.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifAdminStatus
+    oid: 1.3.6.1.2.1.2.2.1.7
+    type: EnumAsStateSet
+    help: The desired state of the interface - 1.3.6.1.2.1.2.2.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: EnumAsStateSet
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational
+      state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInOctets
+    oid: 1.3.6.1.2.1.2.2.1.10
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters. - 1.3.6.1.2.1.2.2.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.11
+    type: counter
+    help: The number of subnetwork-unicast packets delivered to a higher-layer protocol.
+      - 1.3.6.1.2.1.2.2.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.12
+    type: counter
+    help: The number of non-unicast (i.e., subnetwork- broadcast or subnetwork-multicast)
+      packets delivered to a higher-layer protocol. - 1.3.6.1.2.1.2.2.1.12
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInDiscards
+    oid: 1.3.6.1.2.1.2.2.1.13
+    type: counter
+    help: The number of inbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being deliverable to a higher-layer
+      protocol - 1.3.6.1.2.1.2.2.1.13
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: The number of inbound packets that contained errors preventing them from
+      being deliverable to a higher-layer protocol. - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifInUnknownProtos
+    oid: 1.3.6.1.2.1.2.2.1.15
+    type: counter
+    help: The number of packets received via the interface which were discarded because
+      of an unknown or unsupported protocol. - 1.3.6.1.2.1.2.2.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutOctets
+    oid: 1.3.6.1.2.1.2.2.1.16
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters. - 1.3.6.1.2.1.2.2.1.16
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.17
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted
+      to a subnetwork-unicast address, including those that were discarded or not
+      sent. - 1.3.6.1.2.1.2.2.1.17
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutNUcastPkts
+    oid: 1.3.6.1.2.1.2.2.1.18
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted
+      to a non- unicast (i.e., a subnetwork-broadcast or subnetwork-multicast) address,
+      including those that were discarded or not sent. - 1.3.6.1.2.1.2.2.1.18
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutErrors
+    oid: 1.3.6.1.2.1.2.2.1.20
+    type: counter
+    help: The number of outbound packets that could not be transmitted because of
+      errors. - 1.3.6.1.2.1.2.2.1.20
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutQLen
+    oid: 1.3.6.1.2.1.2.2.1.21
+    type: gauge
+    help: The length of the output packet queue (in packets). - 1.3.6.1.2.1.2.2.1.21
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ipForwarding
+    oid: 1.3.6.1.2.1.4.1
+    type: gauge
+    help: The indication of whether this entity is acting as an IP gateway in respect
+      to the forwarding of datagrams received by, but not addressed to, this entity
+      - 1.3.6.1.2.1.4.1
+    enum_values:
+      1: forwarding
+      2: not-forwarding
+  - name: ipDefaultTTL
+    oid: 1.3.6.1.2.1.4.2
+    type: gauge
+    help: The default value inserted into the Time-To-Live field of the IP header
+      of datagrams originated at this entity, whenever a TTL value is not supplied
+      by the transport layer protocol. - 1.3.6.1.2.1.4.2
+  - name: ipInReceives
+    oid: 1.3.6.1.2.1.4.3
+    type: counter
+    help: The total number of input datagrams received from interfaces, including
+      those received in error. - 1.3.6.1.2.1.4.3
+  - name: ipInHdrErrors
+    oid: 1.3.6.1.2.1.4.4
+    type: counter
+    help: The number of input datagrams discarded due to errors in their IP headers,
+      including bad checksums, version number mismatch, other format errors, time-to-live
+      exceeded, errors discovered in processing their IP options, etc. - 1.3.6.1.2.1.4.4
+  - name: ipInAddrErrors
+    oid: 1.3.6.1.2.1.4.5
+    type: counter
+    help: The number of input datagrams discarded because the IP address in their
+      IP header's destination field was not a valid address to be received at this
+      entity - 1.3.6.1.2.1.4.5
+  - name: ipForwDatagrams
+    oid: 1.3.6.1.2.1.4.6
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination, as a result of which an attempt was made to find a route to
+      forward them to that final destination - 1.3.6.1.2.1.4.6
+  - name: ipInUnknownProtos
+    oid: 1.3.6.1.2.1.4.7
+    type: counter
+    help: The number of locally-addressed datagrams received successfully but discarded
+      because of an unknown or unsupported protocol. - 1.3.6.1.2.1.4.7
+  - name: ipInDiscards
+    oid: 1.3.6.1.2.1.4.8
+    type: counter
+    help: The number of input IP datagrams for which no problems were encountered
+      to prevent their continued processing, but which were discarded (e.g., for lack
+      of buffer space) - 1.3.6.1.2.1.4.8
+  - name: ipInDelivers
+    oid: 1.3.6.1.2.1.4.9
+    type: counter
+    help: The total number of input datagrams successfully delivered to IP user-protocols
+      (including ICMP). - 1.3.6.1.2.1.4.9
+  - name: ipOutRequests
+    oid: 1.3.6.1.2.1.4.10
+    type: counter
+    help: The total number of IP datagrams which local IP user-protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.10
+  - name: ipOutDiscards
+    oid: 1.3.6.1.2.1.4.11
+    type: counter
+    help: The number of output IP datagrams for which no problem was encountered to
+      prevent their transmission to their destination, but which were discarded (e.g.,
+      for lack of buffer space) - 1.3.6.1.2.1.4.11
+  - name: ipOutNoRoutes
+    oid: 1.3.6.1.2.1.4.12
+    type: counter
+    help: The number of IP datagrams discarded because no route could be found to
+      transmit them to their destination - 1.3.6.1.2.1.4.12
+  - name: ipReasmTimeout
+    oid: 1.3.6.1.2.1.4.13
+    type: gauge
+    help: The maximum number of seconds which received fragments are held while they
+      are awaiting reassembly at this entity. - 1.3.6.1.2.1.4.13
+  - name: ipReasmReqds
+    oid: 1.3.6.1.2.1.4.14
+    type: counter
+    help: The number of IP fragments received which needed to be reassembled at this
+      entity. - 1.3.6.1.2.1.4.14
+  - name: ipReasmOKs
+    oid: 1.3.6.1.2.1.4.15
+    type: counter
+    help: The number of IP datagrams successfully re- assembled. - 1.3.6.1.2.1.4.15
+  - name: ipReasmFails
+    oid: 1.3.6.1.2.1.4.16
+    type: counter
+    help: 'The number of failures detected by the IP re- assembly algorithm (for whatever
+      reason: timed out, errors, etc) - 1.3.6.1.2.1.4.16'
+  - name: ipFragOKs
+    oid: 1.3.6.1.2.1.4.17
+    type: counter
+    help: The number of IP datagrams that have been successfully fragmented at this
+      entity. - 1.3.6.1.2.1.4.17
+  - name: ipFragFails
+    oid: 1.3.6.1.2.1.4.18
+    type: counter
+    help: The number of IP datagrams that have been discarded because they needed
+      to be fragmented at this entity but could not be, e.g., because their Don't
+      Fragment flag was set. - 1.3.6.1.2.1.4.18
+  - name: ipFragCreates
+    oid: 1.3.6.1.2.1.4.19
+    type: counter
+    help: The number of IP datagram fragments that have been generated as a result
+      of fragmentation at this entity. - 1.3.6.1.2.1.4.19
+  - name: ipRoutingDiscards
+    oid: 1.3.6.1.2.1.4.23
+    type: counter
+    help: The number of routing entries which were chosen to be discarded even though
+      they are valid - 1.3.6.1.2.1.4.23
+  - name: icmpInMsgs
+    oid: 1.3.6.1.2.1.5.1
+    type: counter
+    help: The total number of ICMP messages which the entity received - 1.3.6.1.2.1.5.1
+  - name: icmpInErrors
+    oid: 1.3.6.1.2.1.5.2
+    type: counter
+    help: The number of ICMP messages which the entity received but determined as
+      having ICMP-specific errors (bad ICMP checksums, bad length, etc.). - 1.3.6.1.2.1.5.2
+  - name: icmpInDestUnreachs
+    oid: 1.3.6.1.2.1.5.3
+    type: counter
+    help: The number of ICMP Destination Unreachable messages received. - 1.3.6.1.2.1.5.3
+  - name: icmpInTimeExcds
+    oid: 1.3.6.1.2.1.5.4
+    type: counter
+    help: The number of ICMP Time Exceeded messages received. - 1.3.6.1.2.1.5.4
+  - name: icmpInParmProbs
+    oid: 1.3.6.1.2.1.5.5
+    type: counter
+    help: The number of ICMP Parameter Problem messages received. - 1.3.6.1.2.1.5.5
+  - name: icmpInSrcQuenchs
+    oid: 1.3.6.1.2.1.5.6
+    type: counter
+    help: The number of ICMP Source Quench messages received. - 1.3.6.1.2.1.5.6
+  - name: icmpInRedirects
+    oid: 1.3.6.1.2.1.5.7
+    type: counter
+    help: The number of ICMP Redirect messages received. - 1.3.6.1.2.1.5.7
+  - name: icmpInEchos
+    oid: 1.3.6.1.2.1.5.8
+    type: counter
+    help: The number of ICMP Echo (request) messages received. - 1.3.6.1.2.1.5.8
+  - name: icmpInEchoReps
+    oid: 1.3.6.1.2.1.5.9
+    type: counter
+    help: The number of ICMP Echo Reply messages received. - 1.3.6.1.2.1.5.9
+  - name: icmpInTimestamps
+    oid: 1.3.6.1.2.1.5.10
+    type: counter
+    help: The number of ICMP Timestamp (request) messages received. - 1.3.6.1.2.1.5.10
+  - name: icmpInTimestampReps
+    oid: 1.3.6.1.2.1.5.11
+    type: counter
+    help: The number of ICMP Timestamp Reply messages received. - 1.3.6.1.2.1.5.11
+  - name: icmpInAddrMasks
+    oid: 1.3.6.1.2.1.5.12
+    type: counter
+    help: The number of ICMP Address Mask Request messages received. - 1.3.6.1.2.1.5.12
+  - name: icmpInAddrMaskReps
+    oid: 1.3.6.1.2.1.5.13
+    type: counter
+    help: The number of ICMP Address Mask Reply messages received. - 1.3.6.1.2.1.5.13
+  - name: icmpOutMsgs
+    oid: 1.3.6.1.2.1.5.14
+    type: counter
+    help: The total number of ICMP messages which this entity attempted to send -
+      1.3.6.1.2.1.5.14
+  - name: icmpOutErrors
+    oid: 1.3.6.1.2.1.5.15
+    type: counter
+    help: The number of ICMP messages which this entity did not send due to problems
+      discovered within ICMP such as a lack of buffers - 1.3.6.1.2.1.5.15
+  - name: icmpOutDestUnreachs
+    oid: 1.3.6.1.2.1.5.16
+    type: counter
+    help: The number of ICMP Destination Unreachable messages sent. - 1.3.6.1.2.1.5.16
+  - name: icmpOutTimeExcds
+    oid: 1.3.6.1.2.1.5.17
+    type: counter
+    help: The number of ICMP Time Exceeded messages sent. - 1.3.6.1.2.1.5.17
+  - name: icmpOutParmProbs
+    oid: 1.3.6.1.2.1.5.18
+    type: counter
+    help: The number of ICMP Parameter Problem messages sent. - 1.3.6.1.2.1.5.18
+  - name: icmpOutSrcQuenchs
+    oid: 1.3.6.1.2.1.5.19
+    type: counter
+    help: The number of ICMP Source Quench messages sent. - 1.3.6.1.2.1.5.19
+  - name: icmpOutRedirects
+    oid: 1.3.6.1.2.1.5.20
+    type: counter
+    help: The number of ICMP Redirect messages sent - 1.3.6.1.2.1.5.20
+  - name: icmpOutEchos
+    oid: 1.3.6.1.2.1.5.21
+    type: counter
+    help: The number of ICMP Echo (request) messages sent. - 1.3.6.1.2.1.5.21
+  - name: icmpOutEchoReps
+    oid: 1.3.6.1.2.1.5.22
+    type: counter
+    help: The number of ICMP Echo Reply messages sent. - 1.3.6.1.2.1.5.22
+  - name: icmpOutTimestamps
+    oid: 1.3.6.1.2.1.5.23
+    type: counter
+    help: The number of ICMP Timestamp (request) messages sent. - 1.3.6.1.2.1.5.23
+  - name: icmpOutTimestampReps
+    oid: 1.3.6.1.2.1.5.24
+    type: counter
+    help: The number of ICMP Timestamp Reply messages sent. - 1.3.6.1.2.1.5.24
+  - name: icmpOutAddrMasks
+    oid: 1.3.6.1.2.1.5.25
+    type: counter
+    help: The number of ICMP Address Mask Request messages sent. - 1.3.6.1.2.1.5.25
+  - name: icmpOutAddrMaskReps
+    oid: 1.3.6.1.2.1.5.26
+    type: counter
+    help: The number of ICMP Address Mask Reply messages sent. - 1.3.6.1.2.1.5.26
+  - name: tcpRtoAlgorithm
+    oid: 1.3.6.1.2.1.6.1
+    type: gauge
+    help: The algorithm used to determine the timeout value used for retransmitting
+      unacknowledged octets. - 1.3.6.1.2.1.6.1
+    enum_values:
+      1: other
+      2: constant
+      3: rsre
+      4: vanj
+      5: rfc2988
+  - name: tcpInSegs
+    oid: 1.3.6.1.2.1.6.10
+    type: counter
+    help: The total number of segments received, including those received in error
+      - 1.3.6.1.2.1.6.10
+  - name: tcpOutSegs
+    oid: 1.3.6.1.2.1.6.11
+    type: counter
+    help: The total number of segments sent, including those on current connections
+      but excluding those containing only retransmitted octets - 1.3.6.1.2.1.6.11
+  - name: tcpRetransSegs
+    oid: 1.3.6.1.2.1.6.12
+    type: counter
+    help: The total number of segments retransmitted; that is, the number of TCP segments
+      transmitted containing one or more previously transmitted octets - 1.3.6.1.2.1.6.12
+  - name: tcpInErrs
+    oid: 1.3.6.1.2.1.6.14
+    type: counter
+    help: The total number of segments received in error (e.g., bad TCP checksums)
+      - 1.3.6.1.2.1.6.14
+  - name: tcpOutRsts
+    oid: 1.3.6.1.2.1.6.15
+    type: counter
+    help: The number of TCP segments sent containing the RST flag - 1.3.6.1.2.1.6.15
+  - name: tcpRtoMin
+    oid: 1.3.6.1.2.1.6.2
+    type: gauge
+    help: The minimum value permitted by a TCP implementation for the retransmission
+      timeout, measured in milliseconds - 1.3.6.1.2.1.6.2
+  - name: tcpRtoMax
+    oid: 1.3.6.1.2.1.6.3
+    type: gauge
+    help: The maximum value permitted by a TCP implementation for the retransmission
+      timeout, measured in milliseconds - 1.3.6.1.2.1.6.3
+  - name: tcpMaxConn
+    oid: 1.3.6.1.2.1.6.4
+    type: gauge
+    help: The limit on the total number of TCP connections the entity can support
+      - 1.3.6.1.2.1.6.4
+  - name: tcpActiveOpens
+    oid: 1.3.6.1.2.1.6.5
+    type: counter
+    help: The number of times that TCP connections have made a direct transition to
+      the SYN-SENT state from the CLOSED state - 1.3.6.1.2.1.6.5
+  - name: tcpPassiveOpens
+    oid: 1.3.6.1.2.1.6.6
+    type: counter
+    help: The number of times TCP connections have made a direct transition to the
+      SYN-RCVD state from the LISTEN state - 1.3.6.1.2.1.6.6
+  - name: tcpAttemptFails
+    oid: 1.3.6.1.2.1.6.7
+    type: counter
+    help: The number of times that TCP connections have made a direct transition to
+      the CLOSED state from either the SYN-SENT state or the SYN-RCVD state, plus
+      the number of times that TCP connections have made a direct transition to the
+      LISTEN state from the SYN-RCVD state - 1.3.6.1.2.1.6.7
+  - name: tcpEstabResets
+    oid: 1.3.6.1.2.1.6.8
+    type: counter
+    help: The number of times that TCP connections have made a direct transition to
+      the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state -
+      1.3.6.1.2.1.6.8
+  - name: tcpCurrEstab
+    oid: 1.3.6.1.2.1.6.9
+    type: gauge
+    help: The number of TCP connections for which the current state is either ESTABLISHED
+      or CLOSE-WAIT. - 1.3.6.1.2.1.6.9
+  - name: udpInDatagrams
+    oid: 1.3.6.1.2.1.7.1
+    type: counter
+    help: The total number of UDP datagrams delivered to UDP users. - 1.3.6.1.2.1.7.1
+  - name: udpNoPorts
+    oid: 1.3.6.1.2.1.7.2
+    type: counter
+    help: The total number of received UDP datagrams for which there was no application
+      at the destination port. - 1.3.6.1.2.1.7.2
+  - name: udpInErrors
+    oid: 1.3.6.1.2.1.7.3
+    type: counter
+    help: The number of received UDP datagrams that could not be delivered for reasons
+      other than the lack of an application at the destination port. - 1.3.6.1.2.1.7.3
+  - name: udpOutDatagrams
+    oid: 1.3.6.1.2.1.7.4
+    type: counter
+    help: The total number of UDP datagrams sent from this entity. - 1.3.6.1.2.1.7.4
+  - name: cpqHoGUID
+    oid: 1.3.6.1.4.1.232.11.2.10.3
+    type: OctetString
+    help: The globally unique identifier of this physical server - 1.3.6.1.4.1.232.11.2.10.3
+  - name: deviceManufacturer
+    oid: 1.3.6.1.4.1.232.165.1.2.1
+    type: DisplayString
+    help: The device's manufacturer. - 1.3.6.1.4.1.232.165.1.2.1
+  - name: deviceModel
+    oid: 1.3.6.1.4.1.232.165.1.2.2
+    type: DisplayString
+    help: The device's model. - 1.3.6.1.4.1.232.165.1.2.2
+  - name: deviceFirmwareVersion
+    oid: 1.3.6.1.4.1.232.165.1.2.3
+    type: DisplayString
+    help: The device's firmware version(s). - 1.3.6.1.4.1.232.165.1.2.3
+  - name: deviceHardwareVersion
+    oid: 1.3.6.1.4.1.232.165.1.2.4
+    type: DisplayString
+    help: The device's hardware version. - 1.3.6.1.4.1.232.165.1.2.4
+  - name: deviceIdentName
+    oid: 1.3.6.1.4.1.232.165.1.2.5
+    type: DisplayString
+    help: A string identifying the device - 1.3.6.1.4.1.232.165.1.2.5
+  - name: devicePartNumber
+    oid: 1.3.6.1.4.1.232.165.1.2.6
+    type: DisplayString
+    help: The device's part number. - 1.3.6.1.4.1.232.165.1.2.6
+  - name: deviceSerialNumber
+    oid: 1.3.6.1.4.1.232.165.1.2.7
+    type: DisplayString
+    help: The device's serial number. - 1.3.6.1.4.1.232.165.1.2.7
+  - name: deviceMACAddress
+    oid: 1.3.6.1.4.1.232.165.1.2.8
+    type: DisplayString
+    help: The device's MAC address. - 1.3.6.1.4.1.232.165.1.2.8
+  - name: numOfPdu
+    oid: 1.3.6.1.4.1.232.165.2.1.1
+    type: gauge
+    help: The number of PDUs. - 1.3.6.1.4.1.232.165.2.1.1
+  - name: pduName
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+    type: DisplayString
+    help: The string identify the device. - 1.3.6.1.4.1.232.165.2.1.2.1.2
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduModel
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.3
+    type: DisplayString
+    help: The Device Model. - 1.3.6.1.4.1.232.165.2.1.2.1.3
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduManufacturer
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.4
+    type: DisplayString
+    help: The Device Manufacturer Name (e.g - 1.3.6.1.4.1.232.165.2.1.2.1.4
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduFirmwareVersion
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.5
+    type: DisplayString
+    help: The firmware revision level of the device. - 1.3.6.1.4.1.232.165.2.1.2.1.5
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduPartNumber
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.6
+    type: DisplayString
+    help: The device part number. - 1.3.6.1.4.1.232.165.2.1.2.1.6
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduSerialNumber
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.7
+    type: DisplayString
+    help: The device serial number. - 1.3.6.1.4.1.232.165.2.1.2.1.7
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+  - name: pduStatus
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.8
+    type: EnumAsStateSet
+    help: The overall status of the device - 1.3.6.1.4.1.232.165.2.1.2.1.8
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  - name: pduControllable
+    oid: 1.3.6.1.4.1.232.165.2.1.2.1.9
+    type: EnumAsInfo
+    help: This object indicates whether or not the device is controllable. - 1.3.6.1.4.1.232.165.2.1.2.1.9
+    indexes:
+    - labelname: pduIdentIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduIdentIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduIdentIndex
+    enum_values:
+      1: "yes"
+      2: "no"
+  - name: inputVoltage
+    oid: 1.3.6.1.4.1.232.165.2.2.1.1.2
+    type: gauge
+    help: The measured input voltage from the PDU meters in volts. - 1.3.6.1.4.1.232.165.2.2.1.1.2
+    indexes:
+    - labelname: pduInputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduInputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduInputIndex
+  - name: inputCurrent
+    oid: 1.3.6.1.4.1.232.165.2.2.1.1.3
+    type: gauge
+    help: The measured input current from the PDU meters in hundredths of Amp. - 1.3.6.1.4.1.232.165.2.2.1.1.3
+    indexes:
+    - labelname: pduInputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduInputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduInputIndex
+  - name: pduOutputLoad
+    oid: 1.3.6.1.4.1.232.165.2.3.1.1.2
+    type: gauge
+    help: The device output load in percent of rated capacity - 1.3.6.1.4.1.232.165.2.3.1.1.2
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: pduOutputHeat
+    oid: 1.3.6.1.4.1.232.165.2.3.1.1.3
+    type: gauge
+    help: The total heat load measured on the PDU in BTUs - 1.3.6.1.4.1.232.165.2.3.1.1.3
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: pduOutputPower
+    oid: 1.3.6.1.4.1.232.165.2.3.1.1.4
+    type: gauge
+    help: The total power load measured on the PDU in watts - 1.3.6.1.4.1.232.165.2.3.1.1.4
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: pduOutputNumBreakers
+    oid: 1.3.6.1.4.1.232.165.2.3.1.1.5
+    type: gauge
+    help: The number of breakers for the device - 1.3.6.1.4.1.232.165.2.3.1.1.5
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: breakerVoltage
+    oid: 1.3.6.1.4.1.232.165.2.3.2.1.2
+    type: gauge
+    help: The breaker voltage in volts. - 1.3.6.1.4.1.232.165.2.3.2.1.2
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    - labelname: breakerIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: breakerCurrent
+    oid: 1.3.6.1.4.1.232.165.2.3.2.1.3
+    type: gauge
+    help: The breaker current draw in hundredths of Amp. - 1.3.6.1.4.1.232.165.2.3.2.1.3
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    - labelname: breakerIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: breakerPercentLoad
+    oid: 1.3.6.1.4.1.232.165.2.3.2.1.4
+    type: gauge
+    help: The breaker load in percent. - 1.3.6.1.4.1.232.165.2.3.2.1.4
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    - labelname: breakerIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+  - name: breakerStatus
+    oid: 1.3.6.1.4.1.232.165.2.3.2.1.5
+    type: EnumAsStateSet
+    help: This object indicates the status of the breaker - 1.3.6.1.4.1.232.165.2.3.2.1.5
+    indexes:
+    - labelname: pduOutputIndex
+      type: gauge
+    - labelname: breakerIndex
+      type: gauge
+    lookups:
+    - labels:
+      - pduOutputIndex
+      labelname: pduName
+      oid: 1.3.6.1.4.1.232.165.2.1.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: pduOutputIndex
+    enum_values:
+      1: normal
+      2: overloadWarning
+      3: overloadCritical
+      4: voltageRangeWarning
+      5: voltageRangeCritical
